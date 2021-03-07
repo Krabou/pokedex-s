@@ -1,6 +1,6 @@
 const btnLeft = document.querySelector(".left-button");
 const btnRight = document.querySelector(".right-button");
-const infos = document.getElementById("infos");
+const infos = document.querySelector(".infos");
 const list = document.getElementById("list");
 var count = 0;
 var countId = 0;
