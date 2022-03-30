@@ -38,13 +38,13 @@ function display(pokemons) {
     start()
   };
   btnRight.onclick = () => {
-    incrementCountId();
+    incrementCountId(pokemons);
     start()
   };
 
 }
 
-function decrementCountId(id) {
+function decrementCountId() {
   if (countId != 0) {
     countId -= 20;
     count -= 20;
@@ -52,11 +52,14 @@ function decrementCountId(id) {
   return POKURL = `https://pokeapi.co/api/v2/pokemon?offset=${countId}&limit=20`
 }
 
-function incrementCountId() {
-  countId += 20;
-  count += 20;
+function incrementCountId(pokemons) {
+  if (pokemons.length === 20) {
+    countId += 20;
+    count += 20;
+  }
   return POKURL = `https://pokeapi.co/api/v2/pokemon?offset=${countId}&limit=20`
 }
+
 
 function displayInfo(e) {
   const URLItem = e.target.getAttribute("data-url");
